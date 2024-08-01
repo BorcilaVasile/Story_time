@@ -1,0 +1,39 @@
+.hero-section {
+    margin-top: 5%;
+    width: 1080px;
+    padding: 50px 0;
+  }
+  .hero-title {
+    font-size: 5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-decoration: overline, underline;
+  }
+
+  
+  .hero-subtitle {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  body.light .hero-subtitle {
+    color: #757575;
+  }
+  body.dark .hero-subtitle {
+    color: #c4c3c3;
+  }
+
+  .hero-buttons .btn:hover{
+    letter-spacing: 0.1rem;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    transition: 0.2s;
+  }
+
+  body.light .hero-buttons .btn:hover {
+    box-shadow: #000000 0px 0px 8px;
+  }
+
+  body.dark .hero-buttons .btn:hover {
+    box-shadow: #ffffff 0px 0px 8px;
+  }
+  

@@ -1,0 +1,48 @@
+body {
+  height: 4025px;
+  width: 100%;
+  background-color: #047093; /* Culoare de rezervă pentru browserele mai vechi */
+  background: linear-gradient(to bottom,
+  #ffffff 0%, 
+  #b3e5fc 5%, 
+  #90caf9 25%, 
+  #64b5f6 50%, 
+  #42a5f5 75%, 
+  #0288d1 100%);
+}
+
+body.light {
+  height: 4025px;
+  width: 100%;
+  background-color: #047093; /* Culoare de rezervă pentru browserele mai vechi */
+  background: linear-gradient(to bottom,
+  #ffffff 0%, 
+  #b3e5fc 5%, 
+  #90caf9 25%, 
+  #64b5f6 50%, 
+  #42a5f5 75%, 
+  #0288d1 100%);
+}
+
+body.dark {
+  height: 4025px;
+  width: 100%;
+  background-color: #047093; /* Culoare de rezervă pentru browserele mai vechi */
+  background: linear-gradient(to bottom,
+  #0288d1 5%, 
+  #42a5f5 10%, 
+  #64b5f6 25%, 
+  #90caf9 50%, 
+  #b3e5fc 75%, 
+  #ffffff 100%);
+}
+
+.navbar{
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    z-index: 1000; 
+    background-color: #fff; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+}

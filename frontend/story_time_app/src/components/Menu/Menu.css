@@ -1,0 +1,162 @@
+.navbar {
+    flex: 1;
+    width: 100%;
+    height: 60px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom-width: 2px;
+    border-bottom-color: #000000;
+}
+
+
+.navbar-brand-img{
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-width: 1px;
+    border-color: #000000;
+    border-radius: 10px;
+    border-style: solid;
+}
+
+.navbar-brand {
+    font-weight: bold; 
+}
+
+.toggle-bar{
+    width: 200px;
+    height: 40px;
+    display: flex;
+    margin-left: 5%;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 5%;
+}
+
+.toggle-bar .btn{ 
+    flex:1;
+    background-color: #ffffff;
+    color:#000000;
+    height: 30px;
+    width: 100px;
+    border-radius: 100px;
+    border-width: 2px;
+    border-color: #000000;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.toggle-bar .btn:hover{
+    background-color: #3d8ad1;
+    color: #ffffff;
+    border-width: 2px;
+    border-color: #000000;
+}
+
+.toggle-bar .btn-custom.btn:active{
+    background-color: #3d8ad1 !important;
+    color: #000000 !important;
+    border-width: 2px !important;
+    border-color: #000000 !important;
+}
+
+body.light {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+body.dark {
+   background-color: #343a40;
+   color: #ffffff;
+}
+  
+body.dark .navbar {
+  background-color: #064585 !important;
+}
+  
+body.dark .navbar-brand,
+body.dark .nav-link {
+  color: #ffffff !important;
+}
+
+body.dark .nav-link:hover {
+  background-color: #3d8ad1 !important;
+  color: #000000 !important;
+  border-radius: 10px;
+}
+
+.links {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    justify-content: right;
+}
+
+.links .nav-link:hover{
+    transition: 0ms;
+    background-color: #D1EAF4;
+    color: #000000;
+    border-radius:10px;
+}
+
+
+
+.signInButton{
+    background-color: #7EB0C5;
+    border-color: #000000;
+    color: #000000;
+    border-radius: 10px;
+    height: 32px;
+    width: 83px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-left: 50px;
+}
+
+body.dark .signInButton{
+    border-color: #ffffff;
+}
+
+body.dark .signInButton:hover{
+    box-shadow: #ffffff 0px 0px 5px;
+}
+
+body.light .signInButton:hover{
+    box-shadow: #000000 0px 0px 5px;
+}
+
+.registerButton{ 
+    background-color: #193B49;
+    color: #ffffff;
+    border-radius: 10px;
+    height: 32px;
+    width: 83px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+body.dark .registerButton{
+    border-color: #ffffff;
+}
+
+body.dark .registerButton:hover{
+    box-shadow: #ffffff 0px 0px 5px;
+}
+
+body.light .registerButton:hover{
+    box-shadow: #000000 0px 0px 5px;
+}
