@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import './Hero_section.css'; // pentru stiluri customizate
+import './Hero_section.css'; 
 
 function HeroSection() {
   return (
