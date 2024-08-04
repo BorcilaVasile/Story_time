@@ -1,19 +1,21 @@
-body {
-  height: 4025px;
+html, body, #root{ 
+  height: auto;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.app{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-height: max-content;
   width: 100%;
-  background-color: #047093; /* Culoare de rezervă pentru browserele mai vechi */
-  background: linear-gradient(to bottom,
-  #ffffff 0%, 
-  #b3e5fc 5%, 
-  #90caf9 25%, 
-  #64b5f6 50%, 
-  #42a5f5 75%, 
-  #0288d1 100%);
+  overflow: hidden !important;
 }
 
+
 body.light {
-  height: 4025px;
-  width: 100%;
+  height: 100%;
   background-color: #047093; /* Culoare de rezervă pentru browserele mai vechi */
   background: linear-gradient(to bottom,
   #ffffff 0%, 
@@ -22,19 +24,19 @@ body.light {
   #64b5f6 50%, 
   #42a5f5 75%, 
   #0288d1 100%);
+  color: #000000;
 }
 
 body.dark {
-  height: 4025px;
-  width: 100%;
+  height: 100%;
   background-color: #047093; /* Culoare de rezervă pentru browserele mai vechi */
   background: linear-gradient(to bottom,
-  #0288d1 5%, 
-  #42a5f5 10%, 
-  #64b5f6 25%, 
-  #90caf9 50%, 
-  #b3e5fc 75%, 
-  #ffffff 100%);
+  #000a12 0%,    /* Albastru foarte închis */
+  #0a4075 25%,   /* Albastru mai închis */
+  #114a8a 50%,   /* Albastru închis */
+  #15519f 75%,   /* Albastru mai puțin deschis */
+  #1a61b5 100%);
+  color: #ffffff;
 }
 
 .navbar{

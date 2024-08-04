@@ -1,0 +1,44 @@
+.character-layout {
+    display: grid; /* Folosește grid pentru a aranja elementele */
+    grid-template-columns: repeat(2, 1fr); /* Două coloane de dimensiuni egale */
+    gap: 20px; /* Spațiu între elemente */
+}
+
+.character-wrapper {
+    display: flex; /* Aranjează imaginea și coloana de text pe orizontală */
+    align-items: flex-start; /* Aliniază elementele la începutul axei verticale */
+    gap: 10px; /* Adaugă spațiu între imagine și coloana de text */
+    background-color: aquamarine;
+    border-radius: 30px;
+    width: 50vh;
+    border-width: 1px;
+    border-color: #577EBA;
+    border-style: solid;
+}
+
+.character-wrapper img {
+    width: 100px; /* Ajustează dimensiunea imaginii */
+    height: 100px; /* Asigură că imaginea este pătrată */
+    border-radius: 50%; /* Transformă imaginea într-un cerc */
+    object-fit: cover; /* Asigură că imaginea se potrivește bine în cerc */
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    margin: 10px; /* Adaugă un spațiu între imagine și marginea containerului */
+}
+
+
+.character-text {
+    display: flex;
+    flex-direction: column; /* Aranjează numele și descrierea pe verticală */
+}
+
+.character-name {
+    font-weight: bold; /* Facem numele mai evident */
+    margin-bottom: 5px; /* Adaugă un spațiu sub nume */
+    margin-top: 10px;
+}
+
+.character-description {
+    max-width: 200px; /* Ajustează lățimea descrierii după necesități */
+}

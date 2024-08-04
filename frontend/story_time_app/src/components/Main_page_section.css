@@ -1,0 +1,65 @@
+.main-page-section {
+    overflow: hidden !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    padding: 20px;
+    border-radius: 80px 80px 80px 80px;
+    transition: transform 2s ease-out; 
+    margin-top: 30vh;
+    margin-bottom: 30vh;
+    flex-grow: 1;
+}
+
+.main-page-section.slide-in-to-right {
+    transform: translateX(-25vh); /* Poziția finală */
+}
+
+.main-page-section.slide-out-to-left {
+    transform: translateX(-80vh); /* Poziția inițială */
+}
+
+.main-page-section.slide-in-to-left {
+    transform: translateX(25vh); /* Poziția finală */
+}
+
+.main-page-section.slide-out-to-right {
+    transform: translateX(80vh); /* Poziția inițială */
+}
+
+body.light .main-page-section {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #325ebe;
+    background-color: #68c7e7;
+    box-shadow: 0px 10px 15px 10px color-mix(in hsl, #325ebe 50%, rgba(0, 0, 0, 0.3));
+}
+
+body.dark .main-page-section {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #b4c6ec;
+    background-color: #0f6683;
+    box-shadow: 0px 10px 15px 10px color-mix(in hsl, #82a4ce 50%, rgba(0, 0, 0, 0.3));
+}
+
+.section-title{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.section-subtitle{
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+body.light .section-subtitle {
+    color: #757575;
+}
+
+body.dark .section-subtitle {
+    color: #c4c3c3;
+}

@@ -1,9 +1,9 @@
 import React, {useEffect, useRef } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import '../Main_page_section.css'
-import './Video.css'; 
+import './Items_section.css'; 
 
-function Video() {
+function Items_section() {
     const videoSectionRef = useRef(null);
 
     useEffect(() => {
@@ -18,13 +18,13 @@ function Video() {
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('slide-in-to-right');
-                    entry.target.classList.remove('slide-out-to-left');
+                    entry.target.classList.add('slide-in-to-left');
+                    entry.target.classList.remove('slide-out-to-right');
                 }
                 else 
                 {
-                    entry.target.classList.add('slide-out-to-left');
-                    entry.target.classList.remove('slide-in-to-right');
+                    entry.target.classList.add('slide-out-to-right');
+                    entry.target.classList.remove('slide-in-to-left');
                 }
             });
         }, options);
@@ -44,7 +44,7 @@ function Video() {
         <section className="main-page-section" ref={videoSectionRef}>
             <Container>
                 <Row className="justify-content-center">
-                    <Col md={12} lg={12}>
+                    <Col md={8} lg={6}>
                         <div className="video-wrapper">
                         <iframe
                         src="https://www.youtube.com/embed/mjLSZ-K0kog?si=4bGa6OYB4aMjf_6Z" title="YouTube video player" 
@@ -61,4 +61,4 @@ function Video() {
     );
 }
 
-export default Video;
+export default Items_section;

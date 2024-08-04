@@ -1,57 +1,19 @@
-
-.video-section {
+.justify-content-center {
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 25vh;
-    height: 100vh;
-    padding: 20px;
-    background-color: #68c7e7;
-    border-radius: 80px;
-    box-shadow: 10px 5px 10px 1px color-mix(in hsl, #325ebe 50%, rgba(0, 0, 0, 0.3));
-    position: relative; /* Asigură că `::before` și `::after` sunt poziționate corect */
-    animation: slide-in 3s ease-out forwards; /* Animația pentru slide-in, cu `forwards` pentru a păstra stilul final */
-    transform: translateX(-50vw); /* Poziționează elementul complet la stânga */
-    overflow: hidden;
+    flex-direction: column;
+    padding: 120px;
 }
-
-@keyframes slide-in {
-    from {
-        transform: translateX(-100vh); /* Pornind de la stânga complet */
-    }
-    to {
-        transform: translateX(-25vh); /* Poziția finală */
-    }
-}
-
-.video-section::before {
-    content: "";
-    position: absolute;
-    left: -50vw; /* Poziționează la stânga afară din ecran */
-    top: 0;
-    width: 100vw;
-    height: 100%;
-    background-color: transparent;
-    z-index: -1; /* Asigură că nu se suprapune pe conținut */
-}
-
-.video-section::after {
-    content: "";
-    position: absolute;
-    right: -50vw; /* Poziționează la dreapta afară din ecran */
-    top: 0;
-    width: 100vw;
-    height: 100%;
-    background-color: transparent;
-    z-index: -1; /* Asigură că nu se suprapune pe conținut */
-}
-
-
 .video-wrapper {
+    width: 100%; /* Setează lățimea la 75% din container */
+    height: auto; /* Ajustează înălțimea automat */
     position: relative;
-    padding-top: 56.25vh; /* Aspect ratio 16:9 */
+    padding-top: 56.25%; /* Păstrează aspectul 16:9 */
     overflow: hidden;
-    height: 0;
+    margin-left: 20%;
 }
 
 .video-wrapper iframe {
@@ -60,4 +22,5 @@
     left: 0;
     width: 100%;
     height: 100%;
+    border-radius: 20px;
 }

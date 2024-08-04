@@ -1,14 +1,14 @@
-import React, {useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import '../Main_page_section.css'
-import './Video.css'; 
+import './Movement_section.css';
 
-function Video() {
-    const videoSectionRef = useRef(null);
+function Movement_section() {
 
-    useEffect(() => {
-        const section = videoSectionRef.current;
-
+    const movementSectionRef = useRef(null);
+    
+    useEffect( () => {
+    const section = movementSectionRef.current;
+        
         const options = {
             root: null,
             rootMargin: '0px',
@@ -21,8 +21,7 @@ function Video() {
                     entry.target.classList.add('slide-in-to-right');
                     entry.target.classList.remove('slide-out-to-left');
                 }
-                else 
-                {
+                else {
                     entry.target.classList.add('slide-out-to-left');
                     entry.target.classList.remove('slide-in-to-right');
                 }
@@ -41,18 +40,12 @@ function Video() {
     }, []);
 
     return (
-        <section className="main-page-section" ref={videoSectionRef}>
+        <section className="main-page-section" ref={movementSectionRef}>
             <Container>
                 <Row className="justify-content-center">
-                    <Col md={12} lg={12}>
-                        <div className="video-wrapper">
-                        <iframe
-                        src="https://www.youtube.com/embed/mjLSZ-K0kog?si=4bGa6OYB4aMjf_6Z" title="YouTube video player" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" 
-                        referrerpolicy="strict-origin-when-cross-origin" 
-                        allowfullscreen>
-                        </iframe>
+                    <Col md={8} lg={6}>
+                        <div className="movement-wrapper">
+                            <img src="https://via.placeholder.com/300" alt="Character" />
                         </div>
                     </Col>
                 </Row>
@@ -61,4 +54,4 @@ function Video() {
     );
 }
 
-export default Video;
+export default Movement_section; 
