@@ -1,5 +1,6 @@
 import React, {useEffect, useRef } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import Luffy from '../../assets/luffy.jpg';
 import '../Main_page_section.css'
 import './Items_section.css'; 
 
@@ -44,15 +45,35 @@ function Items_section() {
         <section className="main-page-section" ref={videoSectionRef}>
             <Container>
                 <Row className="justify-content-center">
-                    <Col md={8} lg={6}>
-                        <div className="video-wrapper">
-                        <iframe
-                        src="https://www.youtube.com/embed/mjLSZ-K0kog?si=4bGa6OYB4aMjf_6Z" title="YouTube video player" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" 
-                        referrerpolicy="strict-origin-when-cross-origin" 
-                        allowfullscreen>
-                        </iframe>
+                    <Col md={12} lg={12}>
+                        <div className="section-title">
+                            Add various decorative items 
+                        </div>
+                        <div className="section-subtitle">
+                            Create the perfect atmosphere for your story
+                        </div>
+                        <div className= "items-layout">
+                            <div className= "items-wrapper">
+                                <img src={Luffy} alt="" />
+                                <div className='text-box'>
+                                <div className= "items-name">Luffy</div>
+                                    <div className= "items-description">The rubber</div>
+                                </div>
+                            </div>
+                            <div className= "items-wrapper">
+                                <img src={Luffy} alt="" />
+                                <div className='text-box'>
+                                    <div className= "items-name">Luffy</div>
+                                    <div className= "items-description">The rubber</div>
+                                </div>
+                            </div>
+                            <div className= "items-wrapper">
+                                <img src={Luffy} alt="" />
+                                <div className='text-box'>
+                                    <div className= "items-name">Luffy</div>
+                                    <div className= "items-description">The rubber</div>
+                                </div>
+                            </div>
                         </div>
                     </Col>
                 </Row>

@@ -1,22 +1,57 @@
-.movement-section {
-    overflow: hidden !important;
+.justify-content-right {
+    justify-content: right;
+    margin-left: 25vh;
+}
+
+.movement-layout {
+    display: grid;
+    grid-auto-flow: column; /* Forțează grila să pună toate elementele pe un singur rând */
+    gap: 20px; /* Ajustează distanța între elemente */
+    justify-content: start; /* Aliniază elementele la începutul rândului */
+}
+
+
+
+.movement-wrapper {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 80vh;
-    padding: 10px;
-    background-color: #68c7e7;
-    border-radius: 0px 80px 80px 0px;
-    box-shadow: 10px 5px 10px 1px color-mix(in hsl, #325ebe 50%, rgba(0, 0, 0, 0.3));
-    transition: transform 2s ease-out; 
-}
-/* Clasa care declanșează animația */
-.movement-section.slide-in {
-    transform: translateX(-25vh); /* Poziția finală */
-}
-
-.movement-section.slide-out {
-    transform: translateX(-80vh); /* Poziția inițială */
+    background-color: #7be4de;
+    background: linear-gradient(to bottom, 
+    #7BE4DE 30%, 
+    #447E7B 100%);
+    border-radius: 30px;
+    width: 25vh;
+    height: 50vh;
+    border-width: 1px;
+    border-color: #000000;
+    border-style: solid;
+    object-fit: contain;
+    gap: 2vh;
 }
 
+.movement-wrapper img {
+    width: 15vh;
+    height: 25vh;
+    object-fit: cover;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    margin: 5vh;
+}
 
+
+.movement-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.movement-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.movement-description {
+    max-width: 200px;
+}

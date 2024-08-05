@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import Luffy from '../../assets/luffy.jpg';
 import './Movement_section.css';
 
 function Movement_section() {
@@ -42,10 +43,50 @@ function Movement_section() {
     return (
         <section className="main-page-section" ref={movementSectionRef}>
             <Container>
-                <Row className="justify-content-center">
-                    <Col md={8} lg={6}>
-                        <div className="movement-wrapper">
-                            <img src="https://via.placeholder.com/300" alt="Character" />
+                <Row className="justify-content-right">
+                    <Col md={12} lg={12}>
+                        <div className="section-title">
+                            Create your own special movements 
+                        </div>
+                        <div className="section-subtitle">
+                            Choose the movements that suit your characters in the best way
+                        </div>
+                        <div className='movement-layout'>
+                            <div className="movement-wrapper">
+                                <img src={Luffy} alt="" />
+                                <div className='text-box'>
+                                    <div className="movement-name">Luffy</div>
+                                    <div className="movement-description">The rubber</div>
+                                </div>
+                            </div>
+                            <div className="movement-wrapper">
+                                <img src={Luffy} alt="" />
+                                <div className='text-box'>
+                                    <div className="movement-name">Luffy</div>
+                                    <div className="movement-description">The rubber</div>
+                                </div>
+                            </div>
+                            <div className="movement-wrapper">
+                                <img src={Luffy} alt="" />
+                                <div className='text-box'>
+                                    <div className="movement-name">Luffy</div>
+                                    <div className="movement-description">The rubber</div>
+                                </div>
+                            </div>
+                            <div className="movement-wrapper">
+                                <img src={Luffy} alt="" />
+                                <div className='text-box'>
+                                    <div className="movement-name">Luffy</div>
+                                    <div className="movement-description">The rubber</div>
+                                </div>
+                            </div>
+                            <div className="movement-wrapper">
+                                <img src={Luffy} alt="" />
+                                <div className='text-box'>
+                                    <div className="movement-name">Luffy</div>
+                                    <div className="movement-description">The rubber</div>
+                                </div>
+                            </div>
                         </div>
                     </Col>
                 </Row>

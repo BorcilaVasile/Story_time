@@ -8,7 +8,10 @@
     display: flex; /* Aranjează imaginea și coloana de text pe orizontală */
     align-items: flex-start; /* Aliniază elementele la începutul axei verticale */
     gap: 10px; /* Adaugă spațiu între imagine și coloana de text */
-    background-color: aquamarine;
+    background-color: #40866d;
+    background: linear-gradient(to bottom, 
+    #5fcaa5 30%, 
+    #02573d 100%);
     border-radius: 30px;
     width: 50vh;
     border-width: 1px;

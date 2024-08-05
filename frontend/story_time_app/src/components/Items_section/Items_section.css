@@ -1,0 +1,57 @@
+.justify-content-left {
+    justify-content: left;
+    margin-left: 25vh;
+}
+
+.items-layout {
+    display: grid;
+    grid-auto-flow: column; /* Forțează grila să pună toate elementele pe un singur rând */
+    gap: 20px; /* Ajustează distanța între elemente */
+    justify-content: start; /* Aliniază elementele la începutul rândului */
+}
+
+
+
+.items-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #3CACCF;
+    background: linear-gradient(to bottom, 
+    #3CACCF 30%, 
+    #1F5769 100%);
+    border-radius: 30px;
+    width: 40vh;
+    height: 50vh;
+    border-width: 1px;
+    border-color: #000000;
+    border-style: solid;
+    object-fit: contain;
+    gap: 2vh;
+}
+
+.items-wrapper img {
+    width: 20vh;
+    height: 30vh;
+    object-fit: cover;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    margin-top: 5vh;
+}
+
+
+.items-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.items-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.items-description {
+    max-width: 200px;
+}
