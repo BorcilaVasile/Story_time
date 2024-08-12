@@ -7,7 +7,7 @@
     margin-bottom: 10vh;
 }
 
-.examples_container { 
+.examples_container {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -19,7 +19,7 @@
     margin-top: 5vh;
 }
 
-.examples_search_bar input { 
+.examples_search_bar input {
     width: 80vh;
     height: 5vh;
     border-radius: 10px;
@@ -53,7 +53,7 @@
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.video_wrapper iframe { 
+.video_wrapper iframe {
     width: 300px; /* dimensiuni inițiale */
     height: 200px;
     border-radius: 10px;
@@ -61,15 +61,24 @@
 
 .video_wrapper.active {
     position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%;
-    height: auto;
+    width: 160vh;
+    height: 80vh;
     z-index: 1000;
-    background-color: white; /* Pentru a evidenția video-ul activ */
+    background-color: white; 
     padding: 20px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5); /* Umbra pentru efect de popup */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5); 
+}
+
+.video_wrapper.active iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
 }
 
 .overlay-active .video_wrapper {
@@ -78,5 +87,16 @@
 
 .overlay-active .video_wrapper.active {
     opacity: 1;
-    z-index: 1000; /* asigură-te că video-ul activ este deasupra overlay-ului */
+    z-index: 1000; 
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dim background */
+    z-index: 999;
+    backdrop-filter: blur(5px); 
 }
