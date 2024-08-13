@@ -22,6 +22,7 @@ function Examples() {
         <div className={`examples ${activeVideo !== null ? 'overlay-active' : ''}`}>
             <div className='examples_search_bar'>
                 <input type="text" placeholder='Search examples' />
+                <button>Search</button>
             </div>
             <div className='examples_container'>
                 <div className='example_wrapper'>

@@ -22,12 +22,30 @@
 .examples_search_bar input {
     width: 80vh;
     height: 5vh;
-    border-radius: 10px;
+    border-radius: 10px 0 0 10px;
     border-width: 1px;
     border-color: #000000;
     border-style: solid;
     padding-left: 10px;
     background-color: #bee3f8;
+}
+
+.examples_search_bar button {
+    height: 5vh;
+    border-radius: 0 10px 10px 0;
+    border-width: 1px;
+    border-color: #000000;
+    border-style: solid;
+    background-color: #bee3f8;
+    transition: background-color 0.3s ease;
+}
+
+body.light .examples_search_bar button:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+body.dark .examples_search_bar button:hover {
+    box-shadow: 5px 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .example_wrapper {

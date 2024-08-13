@@ -1,0 +1,113 @@
+.resources { 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+
+.resources_search_bar{ 
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+    height: 8vh;
+}
+
+.resources_search_bar input {
+    width: 80vh;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    border-width: 1px;
+    border-color: #000000;
+    border-style: solid;
+    padding-left: 10px;
+    background-color: #bee3f8;
+}
+
+.resources_search_bar button {
+    height: 100%;
+    border-radius: 0 10px 10px 0;
+    border-width: 1px;
+    border-color: #000000;
+    border-style: solid;
+    background-color: #bee3f8;
+    transition: background-color 0.3s ease;
+}
+
+body.light .resources_search_bar button:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+body.dark .resources_search_bar button:hover {
+    box-shadow: 5px 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.resource_wrapper{
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.resource_post_card{ 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 150vh;
+    height: 30vh;
+    margin-bottom: 3vh;
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: #000000;
+    border-style: solid;
+    background-color: #bee3f8;
+}
+
+body.dark .resource_post_card{ 
+    box-shadow: 0 10px 10px rgba(255, 255, 255, 0.5);
+}
+
+body.light .resource_post_card{ 
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+}
+.post_card_image{ 
+    width: 30%;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    object-fit: contain;
+}
+
+.resource_post_card button{ 
+    height: 5vh;
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: #000000;
+    border-style: solid;
+    background-color: #bee3f8;
+    margin-left: 80vh;
+    margin-top: 5vh;
+}
+
+.resource_post_card button:hover{ 
+    background-color: #010e18;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 70%;
+    height: 100%;
+    padding: 10px;
+}
+.resource_text{ 
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
