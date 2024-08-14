@@ -55,7 +55,7 @@ function Menu(){
             </Nav>
                 <Button href="/login" className='signInButton'
                 style={{ backgroundColor: '#7EB0C5' }}>Sign in</Button>
-                <Button href="/signup" className='registerButton'
+                <Button href="/register" className='registerButton'
                 style={{ backgroundColor: '#193B49' }}>Register</Button>
         </Navbar>
     );

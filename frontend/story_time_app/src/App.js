@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Contact_page from './components/Contact_page/Contact_page';
 import Examples from './components/Examples_page/Examples';
 import Resources from './components/Resources_page/Resources';
+import Register from './components/Register_page/Register';
 
 import Menu from './components/Menu/Menu';
 import HeroSection from './components/Hero_section/Hero_section';
@@ -47,6 +48,10 @@ function App() {
                 // Add the following routes
               }
               <Route path="/resources" element={<Resources />} />
+              {
+                // Add the following routes
+              }
+              <Route path="/register" element={<Register />} />
               {
                 // Add the following routes
               }

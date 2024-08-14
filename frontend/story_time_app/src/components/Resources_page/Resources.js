@@ -1,6 +1,6 @@
 import React from 'react';
 import './Resources.css';
-import Luffy from '../../assets/luffy.jpg';
+import Luffy from '../../assets/wind_breaker.jpg';
 
 
 const textResources = [
