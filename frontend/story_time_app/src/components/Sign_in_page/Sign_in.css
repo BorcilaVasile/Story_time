@@ -1,4 +1,4 @@
-.register_container{
+.sign_in_container{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,23 +13,23 @@
     border-color: #5897d2;  
 }
 
-body.light .register_container {
+body.light .sign_in_container {
     background-color: #ffffff;
     box-shadow: 0px 10px 15px 10px color-mix(in hsl, #325ebe 50%, rgba(0, 0, 0, 0.3));
     border-color: #5897d2;
 }
 
-body.dark .register_container {
+body.dark .sign_in_container {
     background-color: #0f6683;
     box-shadow: 0px 10px 15px 10px color-mix(in hsl, #82a4ce 50%, rgba(0, 0, 0, 0.3));
     border-color: #5897d2;
 }
-.register_title {
+.sign_in_title {
     font-size: 2rem;
     margin-bottom: 1vh;
 }
 
-.register_button_google{
+.sign_in_button_google{
     display: flex;
     align-items: center;
     background-color: #3542B6;
@@ -45,13 +45,13 @@ body.dark .register_container {
     height: 10%;
 }
 
-.register_button_google .logo {
+.sign_in_button_google .logo {
     height: 50px; 
     width: 50px;
     margin-right: 20px;     
 }
 
-.register_or{
+.sign_in_or{
     margin-bottom: 1vh;
 }
 
@@ -81,7 +81,7 @@ form input:focus{
     border-color: #3542B6;
 }
 
-.register_button{
+.sign_in_button{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -97,11 +97,13 @@ form input:focus{
     height: 7%;
 }
 
-.register_sign_in{
+.sign_in_forgot_password,
+ .sign_in_register{
     margin-top: 1vh;
     cursor: pointer;
 }
 
-.register_sign_in:hover{
+.sign_in_forgot_password:hover,
+.sign_in_register:hover {
     text-decoration: underline;
 }
