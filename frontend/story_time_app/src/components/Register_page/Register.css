@@ -3,52 +3,77 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 85vh;
-    width: 40vw;    
+    height: 100vh;
+    width: 40vw;
     margin-top: 12vh;
     margin-left: 30vw;
     margin-bottom: 5vh;
-    border-width: 5px;
+    border-radius: 20px; /* Colțuri rotunjite pentru un aspect modern */
+    backdrop-filter: blur(10px); /* Efect de blur pentru un aspect de tip "glassmorphism" */
+    border-width: 2px; /* Subțiem marginea pentru a păstra un design minimalist */
     border-style: solid;
-    border-color: #5897d2;  
+    border-color: rgba(88, 151, 210, 0.5); /* Border cu opacitate */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); /* Umbra mai subtilă */
+    transition: all 0.3s ease-in-out;
 }
 
 body.light .register_container {
-    background-color: #ffffff;
-    box-shadow: 0px 10px 15px 10px color-mix(in hsl, #325ebe 50%, rgba(0, 0, 0, 0.3));
-    border-color: #5897d2;
+    background: rgba(15, 102, 131, 0.6); 
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); 
 }
 
 body.dark .register_container {
-    background-color: #0f6683;
-    box-shadow: 0px 10px 15px 10px color-mix(in hsl, #82a4ce 50%, rgba(0, 0, 0, 0.3));
-    border-color: #5897d2;
+    background: rgba(15, 102, 131, 0.6); 
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4); 
 }
 .register_title {
-    font-size: 2rem;
-    margin-bottom: 1vh;
+    font-size: 2.5rem; /* Dimensiune mai mare pentru titlu */
+    color: #ffffff; /* Culoare albă pentru un contrast plăcut */
+    margin-bottom: 2vh;
+    font-weight: bold;
+    text-transform: uppercase; /* Stil modern pentru titlu */
+    letter-spacing: 0.1em;
 }
 
 .register_button_google{
     display: flex;
     align-items: center;
-    background-color: #3542B6;
-    color: white;
-    padding: 10px 20px;
+    justify-content: center;
+    background-color: #FFFFFF; /* Fundal alb pentru contrast cu logo-ul Google */
+    color: #555555; /* Culoare gri închis pentru text */
+    padding: 10px 30px;
     margin-bottom: 1vh;
     cursor: pointer;
-    border-color: #ffffff;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 10px;
-    width: 40%; 
-    height: 10%;
+    border: 2px solid #DADCE0; /* Border subtil gri */
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    width: 230px;
+    height: 60px;
+    letter-spacing: 0.5px;
 }
 
 .register_button_google .logo {
-    height: 50px; 
-    width: 50px;
-    margin-right: 20px;     
+    height: 30px;
+    width: 30px;
+    margin-right: 15px; 
+    transition: transform 0.3s ease;
+}
+
+.register_button_google:hover {
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* Umbră mai puternică la hover */
+    transform: translateY(-2px); /* Efect de ridicare */
+}
+
+.register_button_google:active {
+    transform: translateY(1px); /* Efect la click */
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.register_button_google:hover .logo {
+    transform: scale(1.1); /* Mărește puțin logo-ul la hover */
 }
 
 .register_or{
@@ -66,8 +91,8 @@ form{
 }
 
 form input{
-    width: 65%;
-    height: 6vh;
+    width: 350px;
+    height: 45px;
     border-radius: 10px;
     border-width: 1px;
     border-style: solid;
@@ -81,20 +106,48 @@ form input:focus{
     border-color: #3542B6;
 }
 
+.togglePassword {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #007bff;
+    font-size: 14px;
+    padding: 0;
+}
+
 .register_button{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #3542B6;
+    background: linear-gradient(90deg, #3542B6, #4760D6);
     color: white;
-    padding: 10px 20px;
+    padding: 10px 30px;
     cursor: pointer;
-    border-color: #ffffff;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 10px;
-    width: auto; 
-    height: 7%;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    width: auto;
+    height: 50px;
+    text-transform: uppercase;
+}
+
+.register_button:hover{
+    background: linear-gradient(90deg, #2d34a6, #384ab9);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px); /* Ridică butonul ușor la hover */
+}
+
+.register_button:active {
+    transform: translateY(1px); /* Coboară puțin la click */
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
 }
 
 .register_sign_in{

@@ -1,7 +1,16 @@
 import React from 'react';
+import { useState } from 'react';
 import './Sign_in.css';
 
 function Sign_in() {
+
+    const [ showPassword, setShowPassword ] = useState(false);
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    }
+
+   
     return (
     //container for the sing in page 
     <div className='sign_in_container'>
@@ -16,7 +25,21 @@ function Sign_in() {
 
         <form>
             <input type="text" id='username' name='username' placeholder='Username or email' />
-            <input type="password" id='password' name='password' placeholder='Password' />
+            <div className='password'>
+                    <input 
+                        type={showPassword ? 'text' : 'password'} 
+                        id='password' 
+                        name='password' 
+                        placeholder='Password' 
+                    />
+                    <button 
+                        type='button' 
+                        className='togglePassword'
+                        onClick={togglePasswordVisibility}
+                    >
+                        {showPassword ? 'Hide' : 'Show'}
+                    </button>
+                </div>
         </form>
         <button type='submit' className='sign_in_button'>Sign in</button>
         <div className='sign_in_forgot_password'>
