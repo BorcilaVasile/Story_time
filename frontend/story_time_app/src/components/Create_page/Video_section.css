@@ -1,0 +1,18 @@
+.video_section {
+    display: flex;
+    flex-direction: column;
+    align-items: bottom;
+    justify-content: center;
+    height: 100%;
+    width: 100%;  
+    border: 1px solid black;
+}
+
+.video_controls{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    background-color: #f1f1f1;
+}

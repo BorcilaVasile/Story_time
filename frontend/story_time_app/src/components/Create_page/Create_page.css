@@ -1,0 +1,35 @@
+.create_page{ 
+    display: flex;
+    flex-direction: column;
+    margin-top: 15vh;
+    margin-bottom: 5vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    gap: 1vw;
+    height: 90vh;
+}
+
+.top_row{ 
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+}
+
+.down_row{ 
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    gap: 1vw;
+}
+
+.button{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #BCECF3;
+    border-radius: 10px;
+    height: 7vh;
+    max-height: 50px;
+    width: 20vw;
+    max-width: 250px;
+}

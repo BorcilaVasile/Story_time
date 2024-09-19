@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import search from '../../assets/search.svg';
 import './Examples.css';
 
 const videoSources = [
@@ -22,7 +23,7 @@ function Examples() {
         <div className={`examples ${activeVideo !== null ? 'overlay-active' : ''}`}>
             <div className='examples_search_bar'>
                 <input type="text" placeholder='Search examples' />
-                <button>Search</button>
+                <img src={search} alt='search' className='search_icon' />
             </div>
             <div className='examples_container'>
                 <div className='example_wrapper'>

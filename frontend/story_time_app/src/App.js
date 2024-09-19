@@ -5,6 +5,7 @@ import Examples from './components/Examples_page/Examples';
 import Resources from './components/Resources_page/Resources';
 import Register from './components/Register_page/Register';
 import Sign_in from './components/Sign_in_page/Sign_in';
+import CreatePage from './components/Create_page/Create_page';
 
 import Menu from './components/Menu/Menu';
 import HeroSection from './components/Hero_section/Hero_section';
@@ -31,35 +32,12 @@ function App() {
                   <Items_section />
                 </div>
               } />
-              <Route path="/create" element={
-                <div>
-                  <HeroSection />
-                  <Video />
-                  <Character_section />
-                  <Movement_section />
-                  <Items_section />
-                </div>
-              } />
+              <Route path="/create" element={<CreatePage />}/>
               <Route path="/contact" element={<Contact_page />} />
-              {
-                // Add the following routes
-              }
               <Route path="/examples" element={<Examples />} />
-              {
-                // Add the following routes
-              }
               <Route path="/resources" element={<Resources />} />
-              {
-                // Add the following routes
-              }
               <Route path="/register" element={<Register />} />
-              {
-                // Add the following routes
-              }
               <Route path="/login" element={<Sign_in />} />
-              {
-                // Add the following routes
-              }
             </Routes>
           </main>
         <footer >

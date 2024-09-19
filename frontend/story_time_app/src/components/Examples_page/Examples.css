@@ -14,38 +14,67 @@
 }
 
 .examples_search_bar {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    max-width: 500px;
+    margin: 0 auto; 
     display: flex;
     justify-content: center;
     margin-top: 5vh;
 }
 
 .examples_search_bar input {
-    width: 80vh;
-    height: 5vh;
-    border-radius: 10px 0 0 10px;
-    border-width: 1px;
-    border-color: #000000;
-    border-style: solid;
-    padding-left: 10px;
+    width: 100%;
+    padding: 10px 40px 10px 20px;
+    border-radius: 15px;
     background-color: #bee3f8;
+    border: 1px solid #000000;
+    font-size: 16px;
 }
 
-.examples_search_bar button {
-    height: 5vh;
-    border-radius: 0 10px 10px 0;
-    border-width: 1px;
-    border-color: #000000;
-    border-style: solid;
-    background-color: #bee3f8;
-    transition: background-color 0.3s ease;
+body.light .examples_search_bar input {
+    box-shadow: 
+    0 0 5px rgba(0, 0, 0, 0.2),       /* Umbra subtilă exterioară (negru) */
+    0 0 10px rgba(0, 0, 0, 0.1),      /* Un strat adânc suplimentar pentru efect de profunzime */
+    inset 0 0 8px rgba(255, 255, 255, 0.5); /* Umbra interioară albă pentru a adăuga un efect de înălțare */
+    transition: box-shadow 0.3s ease;
 }
 
-body.light .examples_search_bar button:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+body.light .examples_search_bar input:hover, 
+body.light .examples_search_bar input:focus {
+    box-shadow: 
+        0 0 10px rgba(0, 0, 0, 0.3),     /* Umbra neagră mai proeminentă la hover */
+        0 0 15px rgba(0, 0, 0, 0.15),    /* Efect de adâncire mai puternic */
+        inset 0 0 10px rgba(255, 255, 255, 0.7); /* Umbra interioară mai puternică pentru efect de glow */
+    outline: none; /* Eliminăm conturul implicit */
 }
 
-body.dark .examples_search_bar button:hover {
-    box-shadow: 5px 0 10px rgba(255, 255, 255, 0.5);
+body.dark .examples_search_bar input {
+    box-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.3),  /* Umbra exterioară luminoasă (subtilă) */
+    0 0 20px rgba(0, 0, 255, 0.4),      /* Efect de glow albastru (dacă dorești un accent de culoare) */
+    inset 0 0 10px rgba(255, 255, 255, 0.2); /* Umbra interioară pentru a oferi adâncime */
+    transition: box-shadow 0.3s ease;
+}
+
+body.dark .examples_search_bar input:hover, 
+body.dark .examples_search_bar input:focus {
+    box-shadow: 
+        0 0 15px rgba(255, 255, 255, 0.5),
+        0 0 30px rgba(0, 123, 255, 0.5),
+        inset 0 0 10px rgba(255, 255, 255, 0.3);
+    outline: none; /* Eliminăm conturul albastru implicit la focus */
+}
+
+.search_icon{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
 }
 
 .example_wrapper {

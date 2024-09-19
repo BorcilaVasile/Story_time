@@ -1,6 +1,7 @@
 import React from 'react';
 import './Resources.css';
 import Luffy from '../../assets/wind_breaker.jpg';
+import search from '../../assets/search.svg';
 
 
 const textResources = [
@@ -13,7 +14,7 @@ function Resources(){
         <div className='resources'>
             <div className='resources_search_bar'>
                 <input type = "text" placeholder='Search resources' />
-                <button>Search</button>
+                <img src={search} alt='search' className='search_icon' />
             </div>
             <div className='resources_container'>
                 <div className='resource_wrapper'>
