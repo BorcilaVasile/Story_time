@@ -1,35 +1,85 @@
 .create_page{ 
     display: flex;
     flex-direction: column;
-    margin-top: 15vh;
+    margin-top: 12vh;
     margin-bottom: 5vh;
     margin-left: 1vw;
     margin-right: 1vw;
-    gap: 1vw;
     height: 90vh;
+    width: 100%;
+    gap: 1.5vh;
+    overflow: visible;
+    box-sizing: border-box;
 }
 
 .top_row{ 
     display: flex;
     flex-direction: row;
-    gap: 1vw;
+    width: 100%;
+    height: 80%;
+    gap: 2vw;
+    box-sizing: border-box;
 }
 
 .down_row{ 
     display: flex;
     flex-direction: row;
-    justify-content: right;
-    gap: 1vw;
+    justify-content: flex-start;
+    gap: 10vw;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    height: auto; 
+    overflow: visible; 
+    padding: 1vw;
 }
 
-.button{ 
+.button_group{ 
+    display: flex; 
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1vw;
+    box-sizing: border-box;
+    font-size: 1em;
+    font-stretch: condensed;
+}
+
+.button { 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     background-color: #BCECF3;
     border-radius: 10px;
-    height: 7vh;
-    max-height: 50px;
-    width: 20vw;
-    max-width: 250px;
+    height: 5vh;
+    max-height: 40px;
+    width: 15vw;
+    max-width: 200px;
+    padding: 10px;
+    cursor: pointer;
+    box-sizing: border-box;
+    font-size: 0.9em; /* Ajustează dimensiunea textului */
+    font-stretch: normal; /* Revine la extensie normală pentru font */
+    text-align: center;
+}
+
+
+@media (max-width: 768px) {
+    .button {
+      width: 40vw; /* Lățimea butoanelor crește pentru ecrane mai mici */
+      max-width: 150px; /* Setează o limită pentru lățime pe ecrane mici */
+    }
+  
+    .down_row {
+      flex-direction: column; /* Pe ecrane mici, pune butoanele unul sub altul */
+      justify-content: center;
+      gap: 10px; /* Crește distanța între butoane */
+    }
+  }
+  
+
+.download_button{ 
+    border-radius: 40%;
 }

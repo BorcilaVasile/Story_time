@@ -3,16 +3,118 @@
     flex-direction: column;
     align-items: bottom;
     justify-content: center;
+    margin-right: 2vw;
     height: 100%;
-    width: 100%;  
-    border: 1px solid black;
+    width: 90%;
+    margin-right: 1vw;  
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid black; 
+    background: #f1f1f1;
+}
+
+.video_section_canvas{ 
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .video_controls{
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    height: 50px;
+    height: 25px;
+}
+
+.video_time_bar{
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
     background-color: #f1f1f1;
+    bottom: 0;
+}
+
+.full_screen_button{
+    background-color: #f1f1f1;
+    width: 5vw;
+    max-width: 20px;
+    height: 5vh;
+    max-height: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.derulation_bar {
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background: #e2dddd !important;
+    outline: none;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .derulation_bar::-webkit-slider-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .derulation_bar::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+  }
+  
+.jump_before_button{ 
+    border-radius: 40% 0 0 40%;
+}
+
+.jump_next_button{ 
+    border-radius: 0 40% 40% 0;
+}
+
+.jump_before_button, .rewind_button,
+.play_button, .pause_button,
+.fast_forward_button, .jump_next_button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    cursor: pointer;
+    overflow: visible;
+}
+
+.full_screen_button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    cursor: pointer;
+    overflow: hidden;
+    background: none;
+}
+.svg_icon{
+    width: 20px;
+    height: 20px;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    z-index: 10;
+    pointer-events: none; /* pentru a nu bloca hover-ul */
+    transition: opacity 0.3s ease;
 }
