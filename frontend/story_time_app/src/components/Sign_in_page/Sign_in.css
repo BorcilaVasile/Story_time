@@ -87,7 +87,7 @@ form {
     max-width: 400px;
 }
 
-input {
+.text_input {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -98,7 +98,7 @@ input {
     position: relative; 
 }
 
-.password input {
+.password .text_input {
     padding-right: 50px; /* Space for the button inside the input */
 }
 

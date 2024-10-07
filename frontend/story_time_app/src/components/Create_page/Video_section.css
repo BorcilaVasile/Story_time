@@ -10,7 +10,7 @@
     border-radius: 10px;
     overflow: hidden;
     border: 1px solid black; 
-    background: #f1f1f1;
+    background: #b2d5e0;
 }
 
 .video_section_canvas{ 
@@ -18,6 +18,8 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -33,10 +35,51 @@
 .video_time_bar{
     display: flex;
     flex-direction: row;
-    margin: 5px;
-    background-color: #f1f1f1;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent !important;
+    width: 100%;
     bottom: 0;
+    margin-bottom: 10px;
+    padding: 5px;
+    gap: 5px;
 }
+
+.derulation_bar[type='range']{ 
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 10px;
+    outline: none;
+    border: 1px solid black; 
+    border-radius: 10px;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+
+.derulation_bar::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background-color: #3297d2;
+    border: 1px solid black; 
+    border-radius: 50%;
+    cursor: pointer;
+    
+}
+
+.derulation_bar::-moz-range-thumb{
+    width: 24px;
+    height: 24px;
+    background-color: red;
+    border: 0;
+    cursor: pointer;
+}
+
+
 
 .full_screen_button{
     background-color: #f1f1f1;
@@ -47,44 +90,18 @@
     border: none;
     cursor: pointer;
 }
-
-.derulation_bar {
-    width: 100%;
-    height: 8px;
-    border-radius: 5px;
-    background: #e2dddd !important;
-    outline: none;
-    transition: background 0.3s ease-in-out;
-  }
   
-  .derulation_bar::-webkit-slider-thumb {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #4CAF50;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-  }
-  
-  .derulation_bar::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #4CAF50;
-    cursor: pointer;
-  }
-  
-.jump_before_button{ 
+.skip_back_button{ 
     border-radius: 40% 0 0 40%;
 }
 
-.jump_next_button{ 
+.skip_forward_button{ 
     border-radius: 0 40% 40% 0;
 }
 
-.jump_before_button, .rewind_button,
+.skip_back_button, .rewind_button,
 .play_button, .pause_button,
-.fast_forward_button, .jump_next_button{
+.fast_forward_button, .skip_forward_button{
     display: flex;
     align-items: center;
     justify-content: center;

@@ -4,32 +4,124 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import StickMan from '../../3D_models/StickMan.glb'; 
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import './Video_section.css';
-import play from '../../assets/play.svg';
+import play_icon from '../../assets/play.svg';
 import pause from '../../assets/pause.svg';
-import rewind from '../../assets/rewind.svg';
+import rewind_icon from '../../assets/rewind.svg';
 import skip_forward from '../../assets/skip-forward.svg';
 import skip_back from '../../assets/skip-back.svg';
 import fast_forward from '../../assets/fast-forward.svg';
 import maximize from '../../assets/maximize.svg';
 import minimize from '../../assets/minimize.svg';
 
-function VideoSection() {
+function VideoSection({ addFrameSignal, deleteFrameSignal }) {
   const sectionRef = useRef(null);
   const mountRef = useRef(null);
   const mixerRef = useRef(null);
-  const [ playing, pausing  ] = useState(false);
+  const [ play, setPlay  ] = useState(false);
   const [ fullScreen, setFullScreen ] = useState(false);
   const [ tooltip, setTooltip ] = useState('');
+  // Time bar
+  const [startTimeValue, setStartTimeValue] = useState(0);
+  const [finishTimeValue, setFinishTimeValue] = useState(24);
+  const [animationInterval, setAnimationInterval] = useState(null);
+  const [ sliderValue, setSliderValue ] = useState(0);
 
-  const playPause = () => {
-    if (playing) {
-      // mixerRef.current.stopAllAction();
-      pausing(false);
+  useEffect(() => {
+    const progress = (startTimeValue / finishTimeValue) * 10000;
+    setSliderValue(progress);
+  }, [startTimeValue, finishTimeValue]);
+
+  //handle timeline when skip back button is clicked
+  const skipBack = () => { 
+    setStartTimeValue(Math.max( startTimeValue - 10,0));
+  };
+
+  const rewind = () => {
+    if (play) {
+      //mixerRef.current.stopAllAction();
+      setPlay(false);
+      if (animationInterval) {
+        clearInterval(animationInterval);
+        setAnimationInterval(null);
+      }
     } else {
       //mixerRef.current.clipAction().play();
-      pausing(true);
+      setPlay(true);
+      const interval = setInterval(() => {
+        setStartTimeValue(prevTime => {
+          if( prevTime === finishTimeValue)
+            return 0;
+          const newTime = prevTime - 0.2; // Update time, adjust speed as needed
+          if (newTime <= 0) {
+            clearInterval(interval);
+            setPlay(false);
+            return 0; // Stop at finish
+          }
+          return newTime;
+        });
+      }, 100); // Update every 100ms
+      setAnimationInterval(interval);
     }
   };
+
+  const playPause = () => {
+    if (play) {
+      //mixerRef.current.stopAllAction();
+      setPlay(false);
+      if (animationInterval) {
+        clearInterval(animationInterval);
+        setAnimationInterval(null);
+      }
+    } else {
+      //mixerRef.current.clipAction().play();
+      setPlay(true);
+      const interval = setInterval(() => {
+        setStartTimeValue(prevTime => {
+          if( prevTime === finishTimeValue)
+            return 0;
+          const newTime = prevTime + 0.1; // Update time, adjust speed as needed
+          if (newTime >= finishTimeValue) {
+            clearInterval(interval);
+            setPlay(false);
+            return finishTimeValue; // Stop at finish
+          }
+          return newTime;
+        });
+      }, 100); // Update every 100ms
+      setAnimationInterval(interval);
+    }
+  };
+
+  const fastForward = () => {
+    if (play) {
+      //mixerRef.current.stopAllAction();
+      setPlay(false);
+      if (animationInterval) {
+        clearInterval(animationInterval);
+        setAnimationInterval(null);
+      }
+    } else {
+      //mixerRef.current.clipAction().play();
+      setPlay(true);
+      const interval = setInterval(() => {
+        setStartTimeValue(prevTime => {
+          if( prevTime === finishTimeValue)
+            return 0;
+          const newTime = prevTime + 0.2; // Update time, adjust speed as needed
+          if (newTime >= finishTimeValue) {
+            clearInterval(interval);
+            return finishTimeValue; // Stop at finish
+          }
+          return newTime;
+        });
+      }, 100); // Update every 100ms
+      setAnimationInterval(interval);
+    }
+  };
+
+  const skipForward = () => { 
+    setStartTimeValue(Math.min( startTimeValue + 10, finishTimeValue));
+  }
 
   const maximizeScreen = () => {
     if (!fullScreen) {
@@ -57,15 +149,74 @@ function VideoSection() {
     }
   };
   
-  useEffect(() => {
+  //function to handle video time
+  const handleVideoTime = (e) => {
+    const value = e.target.value; 
+    const min=e.target.min;
+    const max=e.target.max; 
 
-    //Handle fullscreen change
+    const percentage=(value-min)/(max-min)*100; 
+    e.target.style.background='linear-gradient(to right, red ${percentage}%, blue %{1-percentage}%) !important';
+
+    setSliderValue(value);
+    const duration= finishTimeValue;
+    const currentTime = (value * duration) / 10000;
+    setStartTimeValue(currentTime);
+  };
+  
+
+  const formatTime = (timeInSeconds) => {
+    const minutes= Math.floor(timeInSeconds / 60);
+    const seconds= Math.floor(timeInSeconds % 60);
+    if (seconds < 10 && minutes < 10) {
+      return `0${minutes}:0${seconds}`;
+    }
+    if (seconds < 10) {
+      return `${minutes}:0${seconds}`;
+    }
+    if (minutes < 10) {
+      return `0${minutes}:${seconds}`;
+    }
+    return `${minutes}:${seconds}`;
+  }
+
+  useEffect(() => {
+    //handle timeline when a new frame set is added
+    if ( addFrameSignal ){
+      setFinishTimeValue(finishTimeValue + 24);
+    };
+
+    //handle timeline when a frame set is deleted
+    if ( deleteFrameSignal ){
+      setFinishTimeValue(finishTimeValue - 24);
+      if(finishTimeValue-24<startTimeValue)
+        setStartTimeValue(finishTimeValue-24);
+    };
+  }, [addFrameSignal, deleteFrameSignal]);
+
+    useEffect(() => {
+    //Handle fullscreen change on button click
     const handleFullScreenChange = () => {
-      if (!document.fullscreenElement) {
+      if (!document.fullscreenElement) 
         setFullScreen(false);
+      else
+        setFullScreen(true);
+  };
+    window.addEventListener('fullscreenchange', handleFullScreenChange);
+
+    //Handle fullscreen change on escape key and f key
+    const handleKeyDownFullScreenChange = (e) => {  
+      if (e.key === 'f' || e.key === 'F') {
+        if (!document.fullscreenElement) {
+          setFullScreen(true);
+        } else {
+
+          setFullScreen(false);
+        }
       }
     };
-    window.addEventListener('fullscreenchange', handleFullScreenChange);
+
+    window.addEventListener('keydown', handleKeyDownFullScreenChange);
 
     // Resize the renderer when the window is resized
     const handleResize = () => {
@@ -74,6 +225,7 @@ function VideoSection() {
       camera.updateProjectionMatrix();
     };
     window.addEventListener('resize', handleResize);
+    
 
     // Create scene, camera, and renderer
     const scene = new Three.Scene();
@@ -126,7 +278,8 @@ function VideoSection() {
     // Animation loop
     const animate = () => {
       requestAnimationFrame(animate);
-      if (mixerRef.current) mixerRef.current.update(0.01);
+      if (mixerRef.current) 
+        mixerRef.current.update(0.01);
       renderer.render(scene, camera);
     };
 
@@ -136,38 +289,49 @@ function VideoSection() {
 
     // Cleanup
     return () => {
+      if (animationInterval) {
+        clearInterval(animationInterval);
+      }
       if (mountRef.current && renderer.domElement) {
         mountRef.current.removeChild(renderer.domElement);
       }
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('fullscreenchange', handleFullScreenChange);
+      window.removeEventListener('keydown', handleKeyDownFullScreenChange);
     };
   }, []);
 
   return <div className="video_section" ref={sectionRef}>
           <div className="video_section_canvas" ref={mountRef}></div>
           <div className='video_controls'>
-            <button className='jump_before_button'>
+            <button className='skip_back_button' onClick={ skipBack }>
               <img className='svg_icon' src={skip_back} alt='skip back' />
             </button>
-            <button className='rewind_button'>
-              <img className='svg_icon' src={rewind} alt='rewind' />
+            <button className='rewind_button' onClick={rewind}>
+              <img className='svg_icon' src={rewind_icon} alt='rewind' />
             </button>
             <button className='play_button' onClick={ playPause}
-            onMouseEnter={() => setTooltip(playing ? 'Pause': 'Play')}>
-              <img className='svg_icon'  src={playing ? pause : play} alt={playing ? 'pause' : 'play'} />
+            onMouseEnter={() => setTooltip(play ? 'Pause': 'Play')}>
+              <img className='svg_icon'  src={play ? pause : play_icon} alt={play ? 'pause' : 'play'} />
             </button>
-            <button className='fast_forward_button' >
-              <img className='svg_icon' src={fast_forward} alt='skip forward' />
+            <button className='fast_forward_button' onClick={ fastForward}>
+              <img className='svg_icon' src={fast_forward} alt='fast forward' />
             </button>
-            <button className='jump_next_button'>
+            <button className='skip_forward_button' onClick={skipForward}>
               <img className='svg_icon' src={skip_forward} alt='skip forward' />
             </button>
           </div>
-          <div className='video_time_bar'>
-            <time className='current_time'>00:00</time>
-            <input className='derulation_bar' type='range' min='0' max='100' step='0.01'></input>
-            <time className='time_left'>00:00</time>
+          <div className='video_time_bar' method='get'>
+            <div className='current_time'>{formatTime(startTimeValue)}</div>
+            <input 
+            type='range' 
+            min='0' 
+            max='10000'
+            step='0.01'
+            value={sliderValue}
+            onChange={ handleVideoTime } 
+            className='derulation_bar'></input>
+            <div className='time_left'>{formatTime(finishTimeValue)}</div>
             <button className='full_screen_button' onClick={ maximizeScreen }>
               <img className='svg_icon' src={ fullScreen ? minimize : maximize } alt={fullScreen ? 'minimize' : 'maximize'} />
             </button>

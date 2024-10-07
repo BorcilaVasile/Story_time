@@ -24,13 +24,14 @@ function Sign_in() {
         <div className='sign_in_or'> or </div>
 
         <form>
-            <input type="text" id='username' name='username' placeholder='Username or email' />
+            <input type="text" id='username' name='username' placeholder='Username or email' className='text_input'/>
             <div className='password'>
                     <input 
                         type={showPassword ? 'text' : 'password'} 
                         id='password' 
                         name='password' 
                         placeholder='Password' 
+                        className='text_input'
                     />
                     <button 
                         type='button' 
